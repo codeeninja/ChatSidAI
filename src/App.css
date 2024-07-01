@@ -51,11 +51,11 @@
   padding: 10px;
   background:black;
   color:whitesmoke;
-  
+
   border-radius: 4px;
   max-width: 100%;
-  word-wrap: break-word; /* Ensure content wraps */
-  white-space: pre-wrap; /* Preserve line breaks */
+  word-wrap: break-word; 
+  white-space: pre-wrap; 
 }
 
 .controls {
@@ -95,3 +95,20 @@ button:disabled {
   background-color: #6c757d;
 }
 
+code {
+  width: 400px
+  
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
