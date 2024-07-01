@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="container">
-      <code className={`initial-message ${text ? 'hidden' : ''}`} style={{ color: 'red', fontSize: '25px',margin:'10px' }}>
+      <code className={`initial-message ${text ? 'hidden' : ''}`} style={{ color: 'red', fontSize: '25px' }}>
         {initialMessage}
       </code>
 
