@@ -21,36 +21,38 @@ function App() {
     } catch (error) {
       console.error('Error generating content:', error);
       setText('An error occurred. Please try again.');
-    } finally {
-      setLoading(false);
+      setLoading(false); // Re-enable input and button if an error occurs
     }
   };
 
-  const animateText = (text, selector) => {
+  const animateText = (text, selector, callback) => {
     const writingEl = document.querySelector(selector);
     if (writingEl) {
       let index = 0;
       writingEl.innerHTML = '';
       const interval = setInterval(() => {
         writingEl.innerHTML = text.substring(0, index++);
-        if (index > text.length) clearInterval(interval);
+        if (index > text.length) {
+          clearInterval(interval);
+          if (callback) callback();
+        }
       }, 80);
     }
   };
 
   useEffect(() => {
-    animateText(initialMessage, '.initial-message');
+    animateText(initialMessage, '.initial-message', () => setLoading(false));
   }, []);
 
   useEffect(() => {
     if (text) {
-      animateText(text, '.generated-content');
+      animateText(text, '.generated-content', () => setLoading(false));
     }
   }, [text]);
 
   return (
     <div className="container">
-      <code className={`initial-message ${text ? 'hidden' : ''}`} style={{ color: 'red', fontSize: '20px',textAlign:'center' }}>
+      <code className={`initial-message ${text ? 'hidden' : ''}`} style={{ color: 'red', fontSize: '20px', textAlign: 'center' }}>
         {initialMessage}
       </code>
 
@@ -70,6 +72,7 @@ function App() {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Enter your prompt"
+          disabled={loading}
         />
         <button onClick={run} disabled={loading}>
           {loading ? 'Loading...' : 'Generate Content'}
