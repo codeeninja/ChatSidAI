@@ -1,47 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px;
-  background-color:black;
+  background-color: black;
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -49,13 +11,12 @@
 .content {
   margin-bottom: 20px;
   padding: 10px;
-  background:black;
-  color:whitesmoke;
-
+  background: black;
+  color: whitesmoke;
   border-radius: 4px;
   max-width: 100%;
-  word-wrap: break-word; 
-  white-space: pre-wrap; 
+  word-wrap: break-word; /* Ensure content wraps */
+  white-space: pre-wrap; /* Preserve line breaks */
 }
 
 .controls {
@@ -63,21 +24,11 @@
   gap: 10px;
   position: fixed;
   width: 85%;
-  bottom: 20px;
+  bottom: 60px; /* Adjusted for footer */
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-input[disabled] {
-  background-color: #e0e0e0;
-  cursor: not-allowed;
-}
-
-button[disabled] {
-  background-color: #6c757d;
-  cursor: not-allowed;
-}
-
 
 input[type="text"] {
   padding: 8px;
@@ -105,19 +56,41 @@ button:disabled {
 }
 
 code {
-  width: 400px
-  
+  width: 400px;
 }
 
+.writing-text:after {
+  content: ' ';
+  display: inline-block;
+  background: rgba(120,120,120,0.7);
+  position:relative;
+  width: 10px;
+  height: 1.1em;
+  vertical-align: middle;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
 
 @keyframes blink {
   0% {
-    opacity: 1
+    opacity: 1;
   }
   50% {
-    opacity: 1
+    opacity: 1;
   }
   100% {
-    opacity: 0
+    opacity: 0;
   }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }

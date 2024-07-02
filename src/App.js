@@ -78,6 +78,9 @@ function App() {
           {loading ? 'Loading...' : 'Generate Content'}
         </button>
       </div>
+      <footer className="footer">
+        <p>Made with love in India. All rights reserved 2024-2025.</p>
+      </footer>
     </div>
   );
 }
