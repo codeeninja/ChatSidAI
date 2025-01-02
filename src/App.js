@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const genAI = new GoogleGenerativeAI('AIzaSyBBMWbU9iDpiOZKz_izUfaNB_9LM6ccYqs');
+const genAI = new GoogleGenerativeAI('AIzaSyBCuQLIIrC4Qb-dgbDlJGv6RRx193cZBRE');
 
 function App() {
   const [text, setText] = useState('');
@@ -36,7 +36,7 @@ function App() {
           clearInterval(interval);
           if (callback) callback();
         }
-      }, 80);
+      },20);
     }
   };
 
@@ -62,7 +62,7 @@ function App() {
         alt=""
       />
 
-      <div className="content">
+      <div className="content"   style={{ width: '60%' }}>
         <p className="generated-content">{text}</p>
       </div>
       <div className="controls">
@@ -79,7 +79,7 @@ function App() {
         </button>
       </div>
       <footer className="footer">
-        <p>Made with love in India. All rights reserved 2024-2025.</p>
+        <p>Made with love in India. All rights reserved 2025-2024.</p>
       </footer>
     </div>
   );
