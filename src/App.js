@@ -63,7 +63,7 @@ function App() {
       />
 
       <div className="content"   style={{ width: '60%' }}>
-        <p className="generated-content">{text}</p>
+        <p className="generated-content text-center">{text}</p>
       </div>
       <div className="controls">
         <input
